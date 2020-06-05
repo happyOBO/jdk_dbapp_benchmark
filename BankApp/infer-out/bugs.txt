@@ -1,0 +1,29 @@
+Found 3 issues
+
+src/bankapp/Bank.java:32: error: NULL_DEREFERENCE
+  object `customer` last assigned on line 31 could be null and is dereferenced at line 32.
+  30.       void withdraw(int accountId, double amount) throws InsufficientFundsException {
+  31.           Customer customer = getCustomer(accountId);
+  32. >         double transactionFee = getTransactionFee(customer.getAccount().getAccountType());
+  33.           if (amount + transactionFee > customer.getAccount().getBalance()) {
+  34.               throw new InsufficientFundsException();
+
+src/bankapp/Bank.java:45: error: NULL_DEREFERENCE
+  object `customer` last assigned on line 41 could be null and is dereferenced at line 45.
+  43.               throw new InvalidAmountException();
+  44.           }
+  45. >         double interest = checkInterest(customer.getAccount().getBalance(), amount);
+  46.           double amountToDeposit = amount + (amount * interest);
+  47.           database.UpdateAccount(accountId, customer.getAccount().getBalance() + amountToDeposit);
+
+src/bankapp/MainMenu.java:288: error: NULL_DEREFERENCE
+  object `customer` last assigned on line 287 could be null and is dereferenced at line 288.
+  286.       private void reloadCustomerRowData(int selectedRow, int accountId) {
+  287.           Customer customer = bank.getCustomer(accountId);
+  288. >         model.setValueAt(customer.getFirstName(), selectedRow, 0);
+  289.           model.setValueAt(customer.getLastName(), selectedRow, 1);
+  290.           model.setValueAt(customer.getAccount().getAccountNumber(), selectedRow, 2);
+
+Summary of the reports
+
+  NULL_DEREFERENCE: 3

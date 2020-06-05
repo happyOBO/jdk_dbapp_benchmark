@@ -1,0 +1,17 @@
+[INFO] output of locale.getdefaultlocale(): ('ko_KR', 'UTF-8')
+[INFO] encoding we chose in the end: UTF-8
+[INFO] Running command /usr/local/Cellar/infer/0.17.0/lib/infer/infer/bin/../lib/python/infer.py -j 4 --project-root /Users/hangyeol/Documents/GitHub/JavaBankApp/BankApp --out /Users/hangyeol/Documents/GitHub/JavaBankApp/BankApp/infer-out -- ant compile
+[INFO] Path to infer script /usr/local/Cellar/infer/0.17.0/lib/infer/infer/bin/../lib/python/infer.py (/usr/local/Cellar/infer/0.17.0/lib/infer/infer/lib/python/infer.py)
+[INFO] Platform: Darwin-19.4.0-x86_64-i386-64bit
+[INFO] PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin:/usr/local/Cellar/ant/1.10.7_1/libxec/bin:/usr/local/Cellar/maven/3.6.3_1/libexec/bin
+[INFO] SHELL=/bin/zsh
+[INFO] PWD=/Users/hangyeol/Documents/GitHub/JavaBankApp/BankApp
+[INFO] java versions:
+openjdk version "1.8.0_242"
+OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_242-b08)
+OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.242-b08, mixed mode)
+javac 1.8.0_242
+
+[INFO] Apache Ant(TM) version 1.10.7 compiled on September 1 2019
+
+[INFO] Capture phase was successful

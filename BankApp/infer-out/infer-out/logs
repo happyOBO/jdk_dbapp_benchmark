@@ -1,0 +1,9 @@
+[15779][environment] CWD = /Users/hangyeol/Documents/GitHub/JavaBankApp/BankApp/infer-out
+[15779][environment] No .inferconfig file found
+[15779][environment] Project root = /Users/hangyeol/Documents/GitHub/JavaBankApp/BankApp/infer-out
+[15779][environment] INFER_ARGS =   @/var/folders/9f/46v0x5xs19v99mb57pblj_180000gn/T/args.tmp.22beec
+[15779][environment]   ++Contents of '/var/folders/9f/46v0x5xs19v99mb57pblj_180000gn/T/args.tmp.22beec':
+[15779][environment]     report
+[15779][environment]   
+[15779][environment] command line arguments:   infer reportActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), inefficient keyset iterator (Java), liveness (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[15779][environment] Infer log identifier is 
