@@ -1,0 +1,15 @@
+int test (Connection con,Scanner in,List<Integer> inputList) throws SQLException {
+	
+	List<Integer> internalValue = null;
+	internalValue = new ArrayList<Integer>();
+	internalValue.add((3+2));
+	internalValue.add((3-2));
+	internalValue.remove(0);
+	int returnValue = inputList.get(internalValue.get((internalValue.size()-1)));
+	inputList = internalValue;
+	returnValue = (returnValue + inputList.size());
+	
+	return returnValue;
+	
+}
+

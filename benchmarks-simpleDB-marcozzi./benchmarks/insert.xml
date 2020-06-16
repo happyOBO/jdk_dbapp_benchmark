@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>unitTests\insert.sdb</input>
+    <solvingTime>&lt;1s</solvingTime>
+  </stats>
+  <paths number="8">
+    <feasible number="1">
+      <path def="catchinsertException-catchinsertException-catchinsertException">
+        <inputs>
+          <table name="t1" size="1">
+            <row>[2, ?]</row>
+          </table>
+          <table name="t2" size="0" />
+        </inputs>
+        <outputs>
+          <table name="t1" size="0" />
+          <table name="t2" size="0" />
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="7">
+      <path def="catchinsertOK-catchinsertOK-catchinsertOK" />
+      <path def="catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="catchinsertOK-catchinsertException-catchinsertOK" ></path>
+      <path def="catchinsertOK-catchinsertException-catchinsertException" ></path>
+      <path def="catchinsertException-catchinsertOK-catchinsertOK" />
+      <path def="catchinsertException-catchinsertOK-catchinsertException" />
+      <path def="catchinsertException-catchinsertException-catchinsertOK" />
+    </unfeasible>
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

@@ -1,0 +1,14 @@
+int test (Connection con,Scanner in) throws SQLException {
+	
+	int input1 = in.nextInt();
+	int input2 = in.nextInt();
+	int internalValue = 3;
+	
+	int computation = (((internalValue*input1) + (3*internalValue)) - 3) ;
+	computation = ((((computation - (2*internalValue)) - input1) - input1) - input1);
+	computation = (((computation + 1) + internalValue) + input2);
+	return computation;
+	
+	
+}
+

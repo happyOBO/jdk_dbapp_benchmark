@@ -1,0 +1,292 @@
+CREATE TABLE education ( 
+						SSNeducation INTEGER NOT NULL, 
+						EDUCATIONeducation INTEGER, 
+						EDUENROLLeducation INTEGER, 
+						CONSTRAINT educationPK PRIMARY KEY (SSNeducation),
+						CONSTRAINT educationFK FOREIGN KEY (SSNeducation) REFERENCES userrecord(SSNuserrecord)
+						); 
+						
+CREATE TABLE employmentstat ( 
+						SSNemploymentstat INTEGER NOT NULL, 
+						UNEMPLOYMENTREASONemploymentstat INTEGER, 
+						EMPLOYMENTSTATemploymentstat INTEGER, 
+						CONSTRAINT employmentstatPK PRIMARY KEY (SSNemploymentstat),
+						CONSTRAINT employmentstatFK FOREIGN KEY (SSNemploymentstat) REFERENCES userrecord(SSNuserrecord)
+						);
+
+CREATE TABLE geo 		( 
+						RESSTATEgeo INTEGER NOT NULL,
+						REGIONgeo INTEGER NOT NULL,  
+						CONSTRAINT geoPK PRIMARY KEY (RESSTATEgeo) 
+						);
+				  
+CREATE TABLE industry 	( 
+						INDUSTRYCODEindustry INTEGER NOT NULL, 
+						INDUSTRYindustry INTEGER, 
+						STABILITYindustry INTEGER, 
+						CONSTRAINT industryPK PRIMARY KEY (INDUSTRYCODEindustry)
+						);
+									
+CREATE TABLE investment ( 
+						SSNinvestment INTEGER NOT NULL, 
+						CAPITALGAINSinvestment INTEGER, 
+						CAPITALLOSSESinvestment INTEGER, 
+						STOCKDIVIDENDSinvestment INTEGER, 
+						CONSTRAINT investmentPK PRIMARY KEY (SSNinvestment),
+						CONSTRAINT investmentFK FOREIGN KEY (SSNinvestment) REFERENCES userrecord(SSNuserrecord)
+						);
+						
+CREATE TABLE job 		(
+						SSNjob INTEGER NOT NULL, 
+						WORKCLASSjob INTEGER, 
+						INDUSTRYCODEjob INTEGER, 
+						OCCUPATIONCODEjob INTEGER, 
+						UNIONMEMBERjob INTEGER, 
+						EMPLOYERSIZEjob INTEGER, 
+						WEEKWAGEjob INTEGER, 
+						SELFEMPLOYEDjob INTEGER, 
+						WORKWEEKSjob INTEGER, 
+						CONSTRAINT jobPK PRIMARY KEY (SSNjob),
+						CONSTRAINT jobFK FOREIGN KEY (SSNjob) REFERENCES userrecord(SSNuserrecord),
+						CONSTRAINT jobFK1 FOREIGN KEY (OCCUPATIONCODEjob) REFERENCES occupation (OCCUPATIONCODEoccupation),
+						CONSTRAINT jobFK2 FOREIGN KEY (INDUSTRYCODEjob) REFERENCES industry (INDUSTRYCODEindustry)
+						);
+						
+CREATE TABLE migration ( 
+						SSNmigration INTEGER NOT NULL, 
+						MIGRATIONCODEmigration INTEGER, 
+						MIGRATIONDISTANCEmigration INTEGER, 
+						MIGRATIONMOVEmigration INTEGER, 
+						MIGRATIONFROMSUNBELTmigration INTEGER, 
+						CONSTRAINT migrationPK PRIMARY KEY (SSNmigration)
+						);
+
+						
+CREATE TABLE occupation ( 
+						OCCUPATIONCODEoccupation INTEGER NOT NULL, 
+						OCCUPATIONoccupation INTEGER, 
+						STABILITYoccupation INTEGER, 
+						CONSTRAINT occupationPK PRIMARY KEY (OCCUPATIONCODEoccupation)
+						);
+						
+CREATE TABLE stateabbv ( 
+						ABBVstateabbv INTEGER NOT NULL, 
+						NAMEstateabbv INTEGER NOT NULL 
+						);
+						
+CREATE TABLE userrecord ( 
+						SSNuserrecord INTEGER NOT NULL, 
+						NAMEuserrecord INTEGER, 
+						ZIPuserrecord INTEGER, 
+						AGEuserrecord INTEGER, 
+						SEXuserrecord INTEGER, 
+						MARITALuserrecord INTEGER, 
+						RACEuserrecord INTEGER, 
+						TAXSTATuserrecord INTEGER, 
+						DETAILuserrecord INTEGER, 
+						HOUSEHOLDDETAILuserrecord INTEGER, 
+						FATHERORIGINuserrecord INTEGER, 
+						MOTHERORIGINuserrecord INTEGER, 
+						BIRTHCOUNTRYuserrecord INTEGER, 
+						CITIZENSHIPuserrecord INTEGER, 
+						CONSTRAINT userrecordPK PRIMARY KEY (SSNuserrecord)
+						);
+						
+CREATE TABLE wage ( 
+						INDUSTRYCODEwage INTEGER NOT NULL, 
+						OCCUPATIONCODEwage INTEGER NOT NULL, 
+						MEANWEEKWAGEwage INTEGER, 
+						CONSTRAINT wagePK PRIMARY KEY (INDUSTRYCODEwage, OCCUPATIONCODEwage),
+						CONSTRAINT wageFK FOREIGN KEY (INDUSTRYCODEwage) REFERENCES industry(INDUSTRYCODEindustry),
+						CONSTRAINT wageFK1 FOREIGN KEY (OCCUPATIONCODEwage) REFERENCES occupation(OCCUPATIONCODEoccupation)
+				  );
+				  
+CREATE TABLE youth ( 
+						SSNyouth INTEGER NOT NULL, 
+						PARENTSyouth INTEGER, 
+						CONSTRAINT youthPK PRIMARY KEY (SSNyouth),
+						CONSTRAINT youthFK FOREIGN KEY (SSNyouth) REFERENCES userrecord(SSNuserrecord)
+					);
+					
+CREATE TABLE ziptable ( 
+						ZIPziptable INTEGER, 
+						CITYziptable INTEGER, 
+						STATENAMEziptable INTEGER, 
+						COUNTYziptable INTEGER 
+						);
+					
+						
+int test(Connection con,Scanner in)  throws SQLException
+	{
+		int ssn = in.nextInt();
+		
+		List<Integer> sysout = new ArrayList<Integer>();
+		int count = 0;
+		int	success = 0;
+		
+		ResultSet result = con.createStatement().executeQuery("Select SSNuserrecord, NAMEuserrecord, ZIPuserrecord, AGEuserrecord, SEXuserrecord, MARITALuserrecord, RACEuserrecord, TAXSTATuserrecord, DETAILuserrecord, HOUSEHOLDDETAILuserrecord, FATHERORIGINuserrecord, MOTHERORIGINuserrecord, BIRTHCOUNTRYuserrecord, CITIZENSHIPuserrecord from userrecord where (SSNuserrecord = " + (ssn)+")");
+		while(result.next()) {
+				count =  (count +1);
+			};
+				if((count > 0))
+			{
+				try {
+					con.createStatement().execute("Delete from youth where (SSNyouth = " + (ssn) +")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from migration where (SSNmigration = " + (ssn) +")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from job where (SSNjob = " + (ssn) +")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from education where (SSNeducation = " + (ssn) +")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from employmentstat where (SSNemploymentstat = " + (ssn)+")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from investment where (SSNinvestment = " + (ssn)+")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from userrecord where (SSNuserrecord = " + (ssn)+")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				success = 1;
+			};
+
+			result = con.createStatement().executeQuery("Select NAMEuserrecord, ZIPuserrecord, SSNuserrecord, AGEuserrecord, SEXuserrecord, MARITALuserrecord, RACEuserrecord, TAXSTATuserrecord, DETAILuserrecord, HOUSEHOLDDETAILuserrecord, FATHERORIGINuserrecord, MOTHERORIGINuserrecord, BIRTHCOUNTRYuserrecord, CITIZENSHIPuserrecord from userrecord where (SSNuserrecord = " + (ssn)+")");
+			while(result.next()) {
+				count =  (count +1);
+			};
+			if((count > 0))
+			{
+				try {
+					con.createStatement().execute("Delete from youth where (SSNyouth = " + (ssn)+")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from migration where (SSNmigration = " + (ssn) + ")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from job where (SSNjob = " + (ssn) + ")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from education where (SSNeducation = " + (ssn) + ")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from employmentstat where (SSNemploymentstat = " + (ssn) + ")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from investment where (SSNinvestment = " + (ssn) + ")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				try {
+					con.createStatement().execute("Delete from userrecord where (SSNuserrecord = " + (ssn) + ")");
+				}
+				catch(SQLException e)
+				{
+					List<Integer> list1 =  (69,120,99,101,112,116,105,111,110,32,105,110,32,100,101,108,101,116,101);
+					List<Integer> list2 =  (13,10);
+					sysout = (List<Integer> list1,List<Integer>list2);
+					return success;
+				};
+				success = 1;
+			}
+			else {
+				List<Integer> list1 =  (84,104,101,32,100,97,116,97,32,105,115,32,97,108,114,101,97,100,121,32,100,101,108,101,116,101,100);
+				List<Integer> list2 =  (13,10);
+				sysout = (List<Integer> list1,List<Integer>list2);
+			};
+		
+		return success;
+			
+	}

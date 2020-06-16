@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>unixUsage\getCourseIdByName.esdb</input>
+    <solvingTime>04s</solvingTime>
+  </stats>
+  <paths number="5">
+    <feasible number="5">
+      <path def="while0">
+        <inputs>
+          <integer name="in1">-1</integer>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="0" />
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+        </inputs>
+        <outputs>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="0" />
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+          <return>-1</return>
+        </outputs>
+      </path>
+      <path def="while1">
+        <inputs>
+          <integer name="in1">-5559</integer>
+          <table name="COURSEINFO" size="3">
+            <row>[6054, -5559, 14, ?]</row>
+            <row>[5, -5559, 5192, ?]</row>
+            <row>[-4048, -5559, 8758, ?]</row>
+          </table>
+          <table name="DEPTINFO" size="3">
+            <row>[8758, ?]</row>
+            <row>[14, ?]</row>
+            <row>[5192, ?]</row>
+          </table>
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+        </inputs>
+        <outputs>
+          <table name="COURSEINFO" size="3">
+            <row>[6054, -5559, 14, ?]</row>
+            <row>[5, -5559, 5192, ?]</row>
+            <row>[-4048, -5559, 8758, ?]</row>
+          </table>
+          <table name="DEPTINFO" size="3">
+            <row>[8758, ?]</row>
+            <row>[14, ?]</row>
+            <row>[5192, ?]</row>
+          </table>
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+          <return>5</return>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="0" />
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

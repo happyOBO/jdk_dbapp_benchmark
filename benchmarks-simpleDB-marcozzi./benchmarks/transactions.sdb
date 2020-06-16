@@ -1,0 +1,36 @@
+CREATE TABLE t1 (
+idt1 INTEGER NOT NULL,
+fieldt1 INTEGER NOT NULL,
+CONSTRAINT t1PK PRIMARY KEY (idt1)
+);
+
+CREATE TABLE t2 (
+idt2 INTEGER NOT NULL,
+fieldt2 INTEGER NOT NULL,
+CONSTRAINT t2PK PRIMARY KEY (idt2),
+CONSTRAINT t2FK FOREIGN KEY (fieldt2) REFERENCES t1(idt1),
+CHECK(idt2 < 100)
+);
+
+int  test (Connection con,Scanner in,List<Integer> list) throws SQLException {
+	
+	con.commit();
+	con.createStatement().execute("INSERT INTO t2 VALUES (2,1)");
+
+	if ((list == null)) {
+		con.commit();
+	} else {
+		con.rollback();
+	};
+	
+	ResultSet result = con.createStatement().executeQuery("SELECT idt2 FROM t2 WHERE (idt2 = 2)");
+	
+	int value = 0;
+	while (result.next()) {
+		value = (value + result.getInt("idt2"));	
+	};
+	
+	return value;
+	
+}
+

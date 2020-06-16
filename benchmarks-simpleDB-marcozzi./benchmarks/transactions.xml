@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>unitTests\transactions.sdb</input>
+    <solvingTime>&lt;1s</solvingTime>
+  </stats>
+  <paths number="8">
+    <feasible number="2">
+      <path def="iftrue-while1">
+        <inputs>
+          <list name="list">null</list>
+          <table name="t1" size="1">
+            <row>[1, ?]</row>
+          </table>
+          <table name="t2" size="0" />
+        </inputs>
+        <outputs>
+          <table name="t1" size="1">
+            <row>[1, ?]</row>
+          </table>
+          <table name="t2" size="1">
+            <row>[2, 1]</row>
+          </table>
+          <return>2</return>
+        </outputs>
+      </path>
+      <path def="iffalse-while0">
+        <inputs>
+          <list name="list">[]</list>
+          <table name="t1" size="1">
+            <row>[1, ?]</row>
+          </table>
+          <table name="t2" size="0" />
+        </inputs>
+        <outputs>
+          <table name="t1" size="1">
+            <row>[1, ?]</row>
+          </table>
+          <table name="t2" size="0" />
+          <return>0</return>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="6">
+      <path def="iftrue-while0" />
+      <path def="iftrue-while2" />
+      <path def="iftrue-while3" ></path>
+      <path def="iffalse-while1" />
+      <path def="iffalse-while2" />
+      <path def="iffalse-while3" />
+    </unfeasible>
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

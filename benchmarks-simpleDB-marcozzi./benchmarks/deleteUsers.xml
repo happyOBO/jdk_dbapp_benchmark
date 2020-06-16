@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>RiskIt\deleteUsers.esdb</input>
+    <solvingTime>09s</solvingTime>
+  </stats>
+  <paths number="183">
+    <feasible number="2">
+      <path def="while0-iffalse-while0-iffalse">
+        <inputs>
+          <integer name="in1">84</integer>
+          <table name="education" size="0" />
+          <table name="employmentstat" size="0" />
+          <table name="geo" size="0" />
+          <table name="industry" size="0" />
+          <table name="investment" size="0" />
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="0" />
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="0" />
+          <table name="wage" size="0" />
+          <table name="youth" size="0" />
+          <table name="ziptable" size="0" />
+        </inputs>
+        <outputs>
+          <table name="education" size="0" />
+          <table name="employmentstat" size="0" />
+          <table name="geo" size="0" />
+          <table name="industry" size="0" />
+          <table name="investment" size="0" />
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="0" />
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="0" />
+          <table name="wage" size="0" />
+          <table name="youth" size="0" />
+          <table name="ziptable" size="0" />
+          <sysouts>
+            <sysouts>The data is already deleted</sysouts>
+          </sysouts>
+          <return>0</return>
+        </outputs>
+      </path>
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK">
+        <inputs>
+          <integer name="in1">4</integer>
+          <table name="education" size="0" />
+          <table name="employmentstat" size="0" />
+          <table name="geo" size="0" />
+          <table name="industry" size="0" />
+          <table name="investment" size="0" />
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="0" />
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="1">
+            <row>[4, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?]</row>
+          </table>
+          <table name="wage" size="0" />
+          <table name="youth" size="0" />
+          <table name="ziptable" size="0" />
+        </inputs>
+        <outputs>
+          <table name="education" size="0" />
+          <table name="employmentstat" size="0" />
+          <table name="geo" size="0" />
+          <table name="industry" size="0" />
+          <table name="investment" size="0" />
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="0" />
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="0" />
+          <table name="wage" size="0" />
+          <table name="youth" size="0" />
+          <table name="ziptable" size="0" />
+          <return>1</return>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="181">
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" ></path>
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iffalse" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iffalse" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iffalse" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iftrue-catchdeleteException" />
+      <path def="while0-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while0-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while0-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while0-iftrue-catchdeleteException" />
+      <path def="while0-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while0-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while1-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while1-iftrue-catchdeleteException" />
+      <path def="while0-iffalse-while1-iffalse" />
+      <path def="while0-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while0-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while2-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while0-iffalse-while2-iftrue-catchdeleteException" />
+      <path def="while0-iffalse-while2-iffalse" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iffalse" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iffalse" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iffalse" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iftrue-catchdeleteException" />
+      <path def="while1-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while1-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while0-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while0-iftrue-catchdeleteException" />
+      <path def="while1-iffalse-while0-iffalse" />
+      <path def="while1-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while1-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while1-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while1-iftrue-catchdeleteException" />
+      <path def="while1-iffalse-while1-iffalse" />
+      <path def="while1-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while1-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while2-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while1-iffalse-while2-iftrue-catchdeleteException" />
+      <path def="while1-iffalse-while2-iffalse" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iftrue-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while0-iffalse" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iftrue-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while1-iffalse" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iftrue-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-while2-iffalse" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iftrue-catchdeleteException" />
+      <path def="while2-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while2-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while0-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while0-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while0-iftrue-catchdeleteException" />
+      <path def="while2-iffalse-while0-iffalse" />
+      <path def="while2-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while2-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while1-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while1-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while1-iftrue-catchdeleteException" />
+      <path def="while2-iffalse-while1-iffalse" />
+      <path def="while2-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK" />
+      <path def="while2-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while2-iftrue-catchdeleteOK-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while2-iftrue-catchdeleteOK-catchdeleteException" />
+      <path def="while2-iffalse-while2-iftrue-catchdeleteException" />
+      <path def="while2-iffalse-while2-iffalse" />
+    </unfeasible>
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

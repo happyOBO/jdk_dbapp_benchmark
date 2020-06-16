@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>unitTests\select.sdb</input>
+    <solvingTime>09s</solvingTime>
+  </stats>
+  <paths number="64">
+    <feasible number="1">
+      <path def="while1-while1-while1">
+        <inputs>
+          <table name="t1" size="3">
+            <row>[3, ?]</row>
+            <row>[2, ?]</row>
+            <row>[1, ?]</row>
+          </table>
+          <table name="t2" size="0" />
+        </inputs>
+        <outputs>
+          <table name="t1" size="3">
+            <row>[3, ?]</row>
+            <row>[2, ?]</row>
+            <row>[1, ?]</row>
+          </table>
+          <table name="t2" size="3">
+            <row>[3, 1]</row>
+            <row>[1, 3]</row>
+            <row>[2, 2]</row>
+          </table>
+          <return>6</return>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="63">
+      <path def="while0-while0-while0" />
+      <path def="while0-while0-while1" />
+      <path def="while0-while0-while2" />
+      <path def="while0-while0-while3" />
+      <path def="while0-while1-while0" />
+      <path def="while0-while1-while1" />
+      <path def="while0-while1-while2" />
+      <path def="while0-while1-while3" />
+      <path def="while0-while2-while0" />
+      <path def="while0-while2-while1" />
+      <path def="while0-while2-while2" />
+      <path def="while0-while2-while3" />
+      <path def="while0-while3-while0" />
+      <path def="while0-while3-while1" />
+      <path def="while0-while3-while2" />
+      <path def="while0-while3-while3" />
+      <path def="while1-while0-while0" />
+      <path def="while1-while0-while1" />
+      <path def="while1-while0-while2" />
+      <path def="while1-while0-while3" />
+      <path def="while1-while1-while0" />
+      <path def="while1-while1-while2" />
+      <path def="while1-while1-while3" />
+      <path def="while1-while2-while0" />
+      <path def="while1-while2-while1" />
+      <path def="while1-while2-while2" />
+      <path def="while1-while2-while3" />
+      <path def="while1-while3-while0" />
+      <path def="while1-while3-while1" />
+      <path def="while1-while3-while2" />
+      <path def="while1-while3-while3" />
+      <path def="while2-while0-while0" />
+      <path def="while2-while0-while1" />
+      <path def="while2-while0-while2" />
+      <path def="while2-while0-while3" />
+      <path def="while2-while1-while0" />
+      <path def="while2-while1-while1" />
+      <path def="while2-while1-while2" />
+      <path def="while2-while1-while3" />
+      <path def="while2-while2-while0" />
+      <path def="while2-while2-while1" />
+      <path def="while2-while2-while2" />
+      <path def="while2-while2-while3" />
+      <path def="while2-while3-while0" />
+      <path def="while2-while3-while1" />
+      <path def="while2-while3-while2" />
+      <path def="while2-while3-while3" />
+      <path def="while3-while0-while0" />
+      <path def="while3-while0-while1" />
+      <path def="while3-while0-while2" />
+      <path def="while3-while0-while3" />
+      <path def="while3-while1-while0" />
+      <path def="while3-while1-while1" />
+      <path def="while3-while1-while2" />
+      <path def="while3-while1-while3" />
+      <path def="while3-while2-while0" />
+      <path def="while3-while2-while1" />
+      <path def="while3-while2-while2" />
+      <path def="while3-while2-while3" />
+      <path def="while3-while3-while0" />
+      <path def="while3-while3-while1" />
+      <path def="while3-while3-while2" />
+      <path def="while3-while3-while3" />
+    </unfeasible>
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

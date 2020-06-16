@@ -1,0 +1,50 @@
+int test (Connection con,Scanner in) throws SQLException {
+	
+	if ((false | true)) {
+	
+	};
+	
+	if ((true & false)) {
+	
+	};
+	
+	if (((true & false) | true)) {
+	
+	} else {
+	
+	};
+	
+	if (((true & false) | false)) {
+	
+	} else {
+	
+	};
+	
+	while ((! ( (true & false) | true) )  ) {
+	
+	};
+	
+	int i = 0;
+	
+	while ((i<1)) {
+		i = (i + 1);
+	};
+	
+	i = 0;
+	List<Integer> liste = null;
+	List<Integer> liste2 = new ArrayList<Integer>();
+	
+	if (true) {
+		while ((i<1)) {
+			i = (i + 1);
+			if ((i==1)) {
+				while (((liste == null) & (2 > (i+liste2.size())))) {
+					return i;
+				};
+			};
+		};	
+	};
+	
+	return i;
+}
+

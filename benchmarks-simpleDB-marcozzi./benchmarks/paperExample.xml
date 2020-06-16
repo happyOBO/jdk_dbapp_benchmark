@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>paperExample.sdb</input>
+    <solvingTime>&lt;1s</solvingTime>
+  </stats>
+  <paths number="9">
+    <feasible number="5">
+      <path def="while0">
+        <inputs>
+          <list name="newBooks">[]</list>
+          <table name="book" size="0" />
+          <table name="shelf" size="0" />
+        </inputs>
+        <outputs>
+          <table name="book" size="0" />
+          <table name="shelf" size="0" />
+          <return>0</return>
+        </outputs>
+      </path>
+      <path def="while1-iftrue-catchinsertOK-iftrue">
+        <inputs>
+          <integer name="in1">6</integer>
+          <list name="newBooks">[7]</list>
+          <table name="book" size="0" />
+          <table name="shelf" size="0" />
+        </inputs>
+        <outputs>
+          <table name="book" size="1">
+            <row>[7, 6]</row>
+          </table>
+          <table name="shelf" size="1">
+            <row>[6, 1]</row>
+          </table>
+          <return>1</return>
+        </outputs>
+      </path>
+      <path def="while1-iftrue-catchinsertException-iffalse">
+        <inputs>
+          <integer name="in1">3</integer>
+          <list name="newBooks">[4]</list>
+          <table name="book" size="1">
+            <row>[4, 5]</row>
+          </table>
+          <table name="shelf" size="1">
+            <row>[5, 1]</row>
+          </table>
+        </inputs>
+        <outputs>
+          <table name="book" size="1">
+            <row>[4, 5]</row>
+          </table>
+          <table name="shelf" size="1">
+            <row>[5, 1]</row>
+          </table>
+          <return>1</return>
+        </outputs>
+      </path>
+      <path def="while1-iffalse-catchinsertOK-iftrue">
+        <inputs>
+          <integer name="in1">7</integer>
+          <list name="newBooks">[8]</list>
+          <table name="book" size="0" />
+          <table name="shelf" size="1">
+            <row>[7, 1]</row>
+          </table>
+        </inputs>
+        <outputs>
+          <table name="book" size="1">
+            <row>[8, 7]</row>
+          </table>
+          <table name="shelf" size="1">
+            <row>[7, 2]</row>
+          </table>
+          <return>1</return>
+        </outputs>
+      </path>
+      <path def="while1-iffalse-catchinsertException-iffalse">
+        <inputs>
+          <integer name="in1">6</integer>
+          <list name="newBooks">[4]</list>
+          <table name="book" size="1">
+            <row>[4, 12]</row>
+          </table>
+          <table name="shelf" size="2">
+            <row>[6, 1]</row>
+            <row>[12, 1]</row>
+          </table>
+        </inputs>
+        <outputs>
+          <table name="book" size="1">
+            <row>[4, 12]</row>
+          </table>
+          <table name="shelf" size="2">
+            <row>[6, 1]</row>
+            <row>[12, 1]</row>
+          </table>
+          <return>1</return>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="4">
+      <path def="while1-iftrue-catchinsertOK-iffalse" />
+      <path def="while1-iftrue-catchinsertException-iftrue" />
+      <path def="while1-iffalse-catchinsertOK-iffalse" />
+      <path def="while1-iffalse-catchinsertException-iftrue" />
+    </unfeasible>
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

@@ -1,0 +1,38 @@
+CREATE TABLE shelf (
+ id INTEGER NOT NULL,
+ numberOfBooks INTEGER NOT NULL,
+ CONSTRAINT sPK PRIMARY KEY (id),
+ CHECK(numberOfBooks > 0));
+
+CREATE TABLE book (
+ isbn INTEGER NOT NULL,
+ shelfId INTEGER NOT NULL,
+ CONSTRAINT bPK PRIMARY KEY (isbn),
+ CONSTRAINT bFK FOREIGN KEY(shelfId) REFERENCES shelf (id));         
+
+int test (Connection con, Scanner in, List<Integer> newBooks) throws SQLException {
+ int i = 0;  List<Integer> addedBooks = new ArrayList<Integer>();
+ while ( ((!(newBooks == null)) & (i < newBooks.size())) ) {
+   int error = 0;  
+   int theShelf = in.nextInt();
+   ResultSet shelves = con.createStatement().executeQuery("SELECT id FROM shelf WHERE (id="+(theShelf)+")");
+   if ( (! shelves.next()) ) {
+   		con.createStatement().execute("INSERT INTO shelf VALUES ("+(theShelf)+",1)");
+    }
+   else {
+   		con.createStatement().execute("UPDATE shelf SET numberOfBooks=(numberOfBooks+1) WHERE (id ="+(theShelf)+")");
+    };
+   try { 
+    con.createStatement().execute("INSERT INTO book VALUES ("+(newBooks.get(i))+","+(theShelf)+")");
+   } catch (SQLException e) { 
+    error = 1; 
+   };
+   if ((error==0)) { 
+    con.commit(); 
+    addedBooks.add(newBooks.get(i)); 
+   } else {
+    con.rollback(); 
+    };
+   i = (i + 1);
+ };  
+ return i;}

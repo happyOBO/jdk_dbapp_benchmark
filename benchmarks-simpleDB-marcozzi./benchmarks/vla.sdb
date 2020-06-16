@@ -1,0 +1,46 @@
+
+		CREATE TABLE uTable (
+			uid INTEGER NOT NULL,
+			ufield INTEGER NOT NULL,
+			CONSTRAINT uPK PRIMARY KEY (uid)
+			);
+		
+		CREATE TABLE aTable (
+			aid INTEGER NOT NULL,
+			afield INTEGER NOT NULL,
+			CONSTRAINT aPK PRIMARY KEY (aid),
+			CONSTRAINT uCst FOREIGN KEY (aid) REFERENCES uTable (uid),
+			CHECK(afield > 2)
+			);
+			
+			CREATE TABLE bTable (
+			bid INTEGER NOT NULL,
+			bfield INTEGER NOT NULL,
+			CONSTRAINT bPK PRIMARY KEY (bid),
+			CONSTRAINT bCst FOREIGN KEY (bid) REFERENCES aTable (aid)
+			);
+			
+			CREATE TABLE cTable (
+			cid INTEGER NOT NULL,
+			cfield INTEGER NOT NULL,
+			CONSTRAINT cPK PRIMARY KEY (cid),
+			CONSTRAINT cCst FOREIGN KEY (cfield) REFERENCES aTable (aid),
+			CONSTRAINT cCst2 FOREIGN KEY (cid) REFERENCES bTable (bid)
+			);
+	
+	
+	static void test (Connection con,Scanner in) throws SQLException {
+		
+		con.commit();
+		int error =0;
+		con.createStatement().execute("DELETE FROM uTable WHERE (uid=3)");
+		try {
+			con.createStatement().execute("UPDATE uTable SET uid = 3 WHERE (uid = 2)");
+		} catch (SQLException e) {
+			error = 1;
+		};
+
+
+		con.commit();
+		
+	}

@@ -1,0 +1,66 @@
+CREATE TABLE data (
+	id INTEGER NOT NULL,
+	pointer INTEGER NOT NULL,
+	chesksum INTEGER NOT NULL,
+	CONSTRAINT dataPK PRIMARY KEY (id),
+	CHECK(id > 0),
+	CHECK(id < 6),
+	CHECK(pointer > 0),
+	CHECK(pointer < 6),
+	CHECK(chesksum > 1),
+	CHECK(chesksum < 11)
+	);
+
+	void test (Connection con,Scanner in,List<Integer> orderedList,List<Integer> invertedList) throws SQLException {
+		
+		con.commit();
+		
+		List<Integer> doubleList= null;
+		int computedLength = 0;
+		int inputOK = 0;
+		
+		if (((!(orderedList==null)) & (!(invertedList==null)))) {
+		
+			if ((orderedList.size()==invertedList.size())) {
+				doubleList = new ArrayList<Integer>();
+			
+				while (((computedLength<orderedList.size()) & (computedLength<invertedList.size()))) {
+					computedLength = (computedLength + 1);
+					int doubleElement = in.nextInt();
+					doubleList.add(doubleElement);
+				};
+				
+				inputOK = 1;
+			};
+			
+		};
+		
+		if ((inputOK == 1)) {
+		
+			int i = 0;
+			
+			while (((i<computedLength) & (inputOK==1))) {
+				if (((!(orderedList.get(i)==invertedList.get(((computedLength-1)-i)))) | (!((2*orderedList.get(i))==doubleList.get(i))))) {
+					inputOK = 0;
+				};
+				i = (i + 1);
+			};
+
+			if ((inputOK == 1)) {
+				
+				i = 0;
+				
+				while ((i<computedLength)) {
+					con.createStatement().execute("INSERT INTO data VALUES ("+(orderedList.get(i))+","+(invertedList.get(i))+","+(doubleList.get(i))+")");
+					i = (i + 1);
+				};
+				
+			};
+			
+		
+	};
+	
+	con.commit();
+			
+	
+	}

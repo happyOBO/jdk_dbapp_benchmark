@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>unixUsage\getDepartmentIDByName.esdb</input>
+    <solvingTime>&lt;1s</solvingTime>
+  </stats>
+  <paths number="2">
+    <feasible number="2">
+      <path def="while0">
+        <inputs>
+          <integer name="in1">-1</integer>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="0" />
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+        </inputs>
+        <outputs>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="0" />
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+          <return>-1</return>
+        </outputs>
+      </path>
+      <path def="while1">
+        <inputs>
+          <integer name="in1">2</integer>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="1">
+            <row>[-1, 2]</row>
+          </table>
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+        </inputs>
+        <outputs>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="1">
+            <row>[-1, 2]</row>
+          </table>
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+          <return>-1</return>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="0" />
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

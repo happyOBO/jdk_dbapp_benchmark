@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>unitTests\delete.sdb</input>
+    <solvingTime>&lt;1s</solvingTime>
+  </stats>
+  <paths number="2">
+    <feasible number="1">
+      <path def="catchdeleteException">
+        <inputs>
+          <table name="t1" size="1">
+            <row>[1, 0]</row>
+          </table>
+          <table name="t2" size="0" />
+        </inputs>
+        <outputs>
+          <table name="t1" size="1">
+            <row>[1, 0]</row>
+          </table>
+          <table name="t2" size="1">
+            <row>[2, 1]</row>
+          </table>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="1">
+      <path def="catchdeleteOK" />
+    </unfeasible>
+    <timeOut number="0" ></timeOut>
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

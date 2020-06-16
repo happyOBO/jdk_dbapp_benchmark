@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>unixUsage\getCommandsByCategory.esdb</input>
+    <solvingTime>&lt;1s</solvingTime>
+  </stats>
+  <paths number="2">
+    <feasible number="2">
+      <path def="while0">
+        <inputs>
+          <integer name="in1">0</integer>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="0" />
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+          <table name="commands" size="0" />
+        </inputs>
+        <outputs>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="0" />
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="0" />
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+          <table name="commands" size="0" />
+        </outputs>
+      </path>
+      <path def="while1">
+        <inputs>
+          <integer name="in1">7</integer>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="0" />
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="1">
+            <row>[6, 7]</row>
+          </table>
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+          <table name="commands" size="0" />
+        </inputs>
+        <outputs>
+          <table name="COURSEINFO" size="0" />
+          <table name="DEPTINFO" size="0" />
+          <table name="OFFICEINFO" size="0" />
+          <table name="RACEINFO" size="0" />
+          <table name="TRANSCRIPT" size="0" />
+          <table name="UNIXCOMMAND" size="1">
+            <row>[6, 7]</row>
+          </table>
+          <table name="USAGEHISTORY" size="0" />
+          <table name="USERINFO" size="0" />
+          <table name="commands" size="1">
+            <row>[0, 6]</row>
+          </table>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="0" />
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

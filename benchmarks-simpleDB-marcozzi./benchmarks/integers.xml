@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>integers.sdb</input>
+    <solvingTime>&lt;1s</solvingTime>
+  </stats>
+  <paths number="1">
+    <feasible number="1">
+      <path def="">
+        <inputs>
+          <integer name="in1">0</integer>
+          <integer name="in2">-4</integer>
+        </inputs>
+        <outputs>
+          <return>0</return>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="0" />
+    <timeOut number="0" />
+    <unknown number="0" ></unknown>
+    <error number="0" />
+  </paths>
+</tests>

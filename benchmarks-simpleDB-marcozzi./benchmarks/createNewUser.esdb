@@ -1,0 +1,371 @@
+CREATE TABLE education ( 
+						SSNeducation INTEGER NOT NULL, 
+						EDUCATIONeducation INTEGER, 
+						EDUENROLLeducation INTEGER, 
+						CONSTRAINT educationPK PRIMARY KEY (SSNeducation),
+						CONSTRAINT educationFK FOREIGN KEY (SSNeducation) REFERENCES userrecord(SSNuserrecord)
+						); 
+						
+CREATE TABLE employmentstat ( 
+						SSNemploymentstat INTEGER NOT NULL, 
+						UNEMPLOYMENTREASONemploymentstat INTEGER, 
+						EMPLOYMENTSTATemploymentstat INTEGER, 
+						CONSTRAINT employmentstatPK PRIMARY KEY (SSNemploymentstat),
+						CONSTRAINT employmentstatFK FOREIGN KEY (SSNemploymentstat) REFERENCES userrecord(SSNuserrecord)
+						);
+
+CREATE TABLE geo 		( 
+						RESSTATEgeo INTEGER NOT NULL,
+						REGIONgeo INTEGER NOT NULL,  
+						CONSTRAINT geoPK PRIMARY KEY (RESSTATEgeo) 
+						);
+				  
+CREATE TABLE industry 	( 
+						INDUSTRYCODEindustry INTEGER NOT NULL, 
+						INDUSTRYindustry INTEGER, 
+						STABILITYindustry INTEGER, 
+						CONSTRAINT industryPK PRIMARY KEY (INDUSTRYCODEindustry)
+						);
+									
+CREATE TABLE investment ( 
+						SSNinvestment INTEGER NOT NULL, 
+						CAPITALGAINSinvestment INTEGER, 
+						CAPITALLOSSESinvestment INTEGER, 
+						STOCKDIVIDENDSinvestment INTEGER, 
+						CONSTRAINT investmentPK PRIMARY KEY (SSNinvestment),
+						CONSTRAINT investmentFK FOREIGN KEY (SSNinvestment) REFERENCES userrecord(SSNuserrecord)
+						);
+						
+CREATE TABLE job 		(
+						SSNjob INTEGER NOT NULL, 
+						WORKCLASSjob INTEGER, 
+						INDUSTRYCODEjob INTEGER, 
+						OCCUPATIONCODEjob INTEGER, 
+						UNIONMEMBERjob INTEGER, 
+						EMPLOYERSIZEjob INTEGER, 
+						WEEKWAGEjob INTEGER, 
+						SELFEMPLOYEDjob INTEGER, 
+						WORKWEEKSjob INTEGER, 
+						CONSTRAINT jobPK PRIMARY KEY (SSNjob),
+						CONSTRAINT jobFK FOREIGN KEY (SSNjob) REFERENCES userrecord(SSNuserrecord),
+						CONSTRAINT jobFK1 FOREIGN KEY (OCCUPATIONCODEjob) REFERENCES occupation (OCCUPATIONCODEoccupation),
+						CONSTRAINT jobFK2 FOREIGN KEY (INDUSTRYCODEjob) REFERENCES industry (INDUSTRYCODEindustry)
+						);
+						
+CREATE TABLE migration ( 
+						SSNmigration INTEGER NOT NULL, 
+						MIGRATIONCODEmigration INTEGER, 
+						MIGRATIONDISTANCEmigration INTEGER, 
+						MIGRATIONMOVEmigration INTEGER, 
+						MIGRATIONFROMSUNBELTmigration INTEGER, 
+						CONSTRAINT migrationPK PRIMARY KEY (SSNmigration)
+						);
+
+						
+CREATE TABLE occupation ( 
+						OCCUPATIONCODEoccupation INTEGER NOT NULL, 
+						OCCUPATIONoccupation INTEGER, 
+						STABILITYoccupation INTEGER, 
+						CONSTRAINT occupationPK PRIMARY KEY (OCCUPATIONCODEoccupation)
+						);
+						
+CREATE TABLE stateabbv ( 
+						ABBVstateabbv INTEGER NOT NULL, 
+						NAMEstateabbv INTEGER NOT NULL 
+						);
+						
+CREATE TABLE userrecord ( 
+						SSNuserrecord INTEGER NOT NULL, 
+						NAMEuserrecord INTEGER, 
+						ZIPuserrecord INTEGER, 
+						AGEuserrecord INTEGER, 
+						SEXuserrecord INTEGER, 
+						MARITALuserrecord INTEGER, 
+						RACEuserrecord INTEGER, 
+						TAXSTATuserrecord INTEGER, 
+						DETAILuserrecord INTEGER, 
+						HOUSEHOLDDETAILuserrecord INTEGER, 
+						FATHERORIGINuserrecord INTEGER, 
+						MOTHERORIGINuserrecord INTEGER, 
+						BIRTHCOUNTRYuserrecord INTEGER, 
+						CITIZENSHIPuserrecord INTEGER, 
+						CONSTRAINT userrecordPK PRIMARY KEY (SSNuserrecord)
+						);
+						
+CREATE TABLE wage ( 
+						INDUSTRYCODEwage INTEGER NOT NULL, 
+						OCCUPATIONCODEwage INTEGER NOT NULL, 
+						MEANWEEKWAGEwage INTEGER, 
+						CONSTRAINT wagePK PRIMARY KEY (INDUSTRYCODEwage, OCCUPATIONCODEwage),
+						CONSTRAINT wageFK FOREIGN KEY (INDUSTRYCODEwage) REFERENCES industry(INDUSTRYCODEindustry),
+						CONSTRAINT wageFK1 FOREIGN KEY (OCCUPATIONCODEwage) REFERENCES occupation(OCCUPATIONCODEoccupation)
+				  );
+				  
+CREATE TABLE youth ( 
+						SSNyouth INTEGER NOT NULL, 
+						PARENTSyouth INTEGER, 
+						CONSTRAINT youthPK PRIMARY KEY (SSNyouth),
+						CONSTRAINT youthFK FOREIGN KEY (SSNyouth) REFERENCES userrecord(SSNuserrecord)
+					);
+					
+CREATE TABLE ziptable ( 
+						ZIPziptable INTEGER, 
+						CITYziptable INTEGER, 
+						STATENAMEziptable INTEGER, 
+						COUNTYziptable INTEGER 
+						);
+			
+						
+	int test (Connection con,Scanner in) throws SQLException
+	{	 	
+	 	 int ssn = in.nextInt();
+		 int age = in.nextInt(); 
+		 int capitalGains = in.nextInt();
+		 int capitalLosses = in.nextInt(); 
+		 int stockDividend = in.nextInt();
+		 int industryCode = in.nextInt();
+		 int occupationCode = in.nextInt();
+		 int employerSize = in.nextInt();
+		 int weekWage = in.nextInt();
+		 int selfEmployed = in.nextInt();
+		 int workWeeks = in.nextInt();	
+		
+		 int name = in.nextInt();
+		 int zipcode = in.nextInt();
+		 int sex = in.nextInt();
+		 int  marital = in.nextInt();
+		 int  race = in.nextInt();
+		 int  taxStatus = in.nextInt();
+		 int  taxDetails = in.nextInt();
+		 int  houseHoldDetails = in.nextInt();
+		 int  fatherOrigin = in.nextInt();
+		 int  motherOrigin = in.nextInt();
+		 int  birthCountry = in.nextInt();
+		 int  citizenship = in.nextInt();
+		 int  parents  = in.nextInt();
+		 int  unEmploymentReason = in.nextInt();
+		 int  employmentStatus = in.nextInt();
+		 int  education= in.nextInt();
+		 int  eduEnroll= in.nextInt();
+		 int  workClass = in.nextInt();
+		 int  unionMember = in.nextInt();
+		
+		List<Integer> sysout = new ArrayList<Integer>();
+		int success = 0;
+		int count = 0;
+		
+		List<Integer> list1 =  (67,117,115,116,111,109,101,114,32,100,101,116,97,105,108,115,32,121,111,117,32,101,110,116,101,114,101,100,32,97,114,101,32,46,46,46,46,46);
+		List<Integer> list2 =  (13,10);
+		sysout = (List<Integer> list1,List<Integer>list2);
+		
+		list1 =  (32,78,97,109,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int name,List<Integer>list2);
+
+		list1 =  (32,83,83,78,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int ssn,List<Integer>list2);
+		
+		list1 =  (32,65,103,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int age,List<Integer>list2);
+		
+		list1 =  (32,83,101,120,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int sex,List<Integer>list2);
+		
+		list1 =  (32,77,97,114,105,116,97,108,32,83,116,97,116,117,115,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int marital,List<Integer>list2);
+		
+		list1 =  (32,82,97,99,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int race,List<Integer>list2);
+		
+		list1 =  (32,84,97,120,32,83,116,97,116,117,115,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int taxStatus,List<Integer>list2);
+		
+		list1 =  (32,84,97,120,32,68,101,116,97,105,108,115,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int taxDetails,List<Integer>list2);
+		
+		list1 =  (32,32,72,111,117,115,101,32,104,111,108,100,32,105,110,102,111,114,109,97,116,105,111,110,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int houseHoldDetails,List<Integer>list2);
+		
+		list1 =  (32,70,97,116,104,101,114,39,115,32,111,114,105,103,105,110,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int fatherOrigin,List<Integer>list2);
+
+		list1 =  (32,77,111,116,104,101,114,39,115,32,111,114,105,103,105,110,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int motherOrigin,List<Integer>list2);
+		
+		list1 =  (32,66,105,114,116,104,32,67,111,117,110,116,114,121,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int birthCountry,List<Integer>list2);
+		
+		list1 =  (32,67,105,116,105,122,101,110,83,104,105,112,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int citizenship,List<Integer>list2);
+
+		list1 =  (32,67,97,112,105,116,97,108,32,71,97,105,110,115,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int capitalGains,List<Integer>list2);
+		
+		list1 =  (32,67,97,112,105,116,97,108,32,108,111,115,115,101,115,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int capitalLosses,List<Integer>list2);
+		
+		list1 =  (32,83,116,111,99,107,32,100,105,118,105,100,101,110,100,115,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int stockDividend,List<Integer>list2);
+		
+		list1 =  (32,80,97,114,101,110,116,115,39,73,110,102,111,114,109,97,114,105,111,110,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int parents,List<Integer>list2);
+		
+		list1 =  (32,69,109,112,108,111,121,109,101,110,116,32,83,116,97,116,117,115,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int employmentStatus,List<Integer>list2);
+		
+		list1 =  (32,85,110,45,101,109,112,108,111,121,109,101,110,116,32,114,101,97,115,111,110,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int unEmploymentReason,List<Integer>list2);
+		
+		list1 =  (32,69,100,117,99,97,116,105,111,110,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int education,List<Integer>list2);
+		
+		list1 =  (32,70,117,114,116,104,101,114,32,101,100,117,99,97,116,105,111,110,32,101,110,114,111,108,108,101,100,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int eduEnroll,List<Integer>list2);
+
+		list1 =  (32,87,111,114,107,32,67,108,97,115,115,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int workClass,List<Integer>list2);
+
+		list1 =  (32,85,110,105,111,110,32,109,101,109,98,101,114,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int unionMember,List<Integer>list2);
+
+		list1 =  (32,73,110,100,117,115,116,114,121,32,99,111,100,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int industryCode,List<Integer>list2);
+		
+		list1 =  (32,79,99,99,117,112,97,116,105,111,110,32,99,111,100,101,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int occupationCode,List<Integer>list2);
+		
+		list1 =  (32,69,109,112,108,111,121,101,114,32,83,105,122,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int employerSize,List<Integer>list2);
+		
+		list1 =  (32,83,101,108,102,45,69,109,112,108,111,121,101,100,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int selfEmployed,List<Integer>list2);
+
+		list1 =  (32,87,101,101,107,32,119,97,103,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int weekWage,List<Integer>list2);
+		
+		list1 =  (32,78,111,46,32,111,102,32,119,101,101,107,115,32,111,102,32,119,111,114,107,32,32,32,32,32,32,32,58,32);
+		list2 =  (13,10);
+		sysout = (List<Integer> list1,int workWeeks,List<Integer>list2);
+								
+		ResultSet result = con.createStatement().executeQuery("Select SSNuserrecord,NAMEuserrecord, ZIPuserrecord, AGEuserrecord, SEXuserrecord, MARITALuserrecord, RACEuserrecord, TAXSTATuserrecord, DETAILuserrecord, HOUSEHOLDDETAILuserrecord, FATHERORIGINuserrecord, MOTHERORIGINuserrecord, BIRTHCOUNTRYuserrecord, CITIZENSHIPuserrecord from userrecord where (SSNuserrecord = " + (ssn)+")");
+		
+		while(result.next())
+		{
+			count = (count + 1);
+		};
+		
+		list1 = (45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45);
+		list2 = (13,10);
+		sysout = (List<Integer> list1,List<Integer>list2);
+		
+		
+		if((count == 0))
+		{		
+			try {
+				con.createStatement().execute("INSERT INTO userrecord VALUES ("+(ssn)+", " + (name) + ", " + (zipcode) + ", "+ (age) +", "+ (sex) +", "+(marital)+", " + (race) +", " + (taxStatus)  + ", " + (taxDetails) +", " + (houseHoldDetails) +", " + (fatherOrigin) + ", " + (motherOrigin) + ", " + (birthCountry) + ", "+ (citizenship) + ")");
+			}
+			catch(SQLException e)
+			{
+				list1 = (67,97,116,99,104,32,105,110,32,99,114,101,97,116,101,85,115,101,114);
+				list2 = (13,10);
+				sysout = (List<Integer> list1,List<Integer>list2);
+				return success;
+			};
+			try {
+				con.createStatement().execute("INSERT INTO investment VALUES ("+ (ssn) +", " + (capitalGains) +", " + (capitalLosses) +", " + (stockDividend)+ ")");
+			}
+			catch(SQLException e)
+			{
+				list1 = (67,97,116,99,104,32,105,110,32,99,114,101,97,116,101,85,115,101,114);
+				list2 = (13,10);
+				sysout = (List<Integer> list1,List<Integer>list2);
+				return success;
+			};
+			try {
+				con.createStatement().execute("INSERT INTO youth VALUES (" + (ssn) + ", " + (parents) +")");
+			}
+			catch(SQLException e)
+			{
+				list1 = (67,97,116,99,104,32,105,110,32,99,114,101,97,116,101,85,115,101,114);
+				list2 = (13,10);
+				sysout = (List<Integer> list1,List<Integer>list2);
+				return success;
+			};
+			try {
+				con.createStatement().execute("INSERT INTO employmentstat VALUES (" + (ssn) + ", "+ (unEmploymentReason) + ", " + (employmentStatus) + ")");
+			}
+			catch(SQLException e)
+			{
+				list1 = (67,97,116,99,104,32,105,110,32,99,114,101,97,116,101,85,115,101,114);
+				list2 = (13,10);
+				sysout = (List<Integer> list1,List<Integer>list2);
+				return success;
+			};
+			try {
+				con.createStatement().execute("INSERT INTO education VALUES (" + (ssn) + ", "	+ (education) + ", " + (eduEnroll) + ")");
+			}
+			catch(SQLException e)
+			{
+				list1 = (67,97,116,99,104,32,105,110,32,99,114,101,97,116,101,85,115,101,114);
+				list2 = (13,10);
+				sysout = (List<Integer> list1,List<Integer>list2);
+				return success;
+			};
+			try {
+				con.createStatement().execute("INSERT INTO job VALUES (" + (ssn) +", " + (workClass) + ", "	+ (industryCode) + ", " + (occupationCode) + ", " + (unionMember) + ", " + (employerSize) + ", " + (weekWage) + ", " + (selfEmployed) + ", " + (workWeeks) + ")");
+			}
+			catch(SQLException e)
+			{
+				list1 = (67,97,116,99,104,32,105,110,32,99,114,101,97,116,101,85,115,101,114);
+				list2 = (13,10);
+				sysout = (List<Integer> list1,List<Integer>list2);
+				return success;
+			};
+			
+			success = 1;
+			
+			list1 = (84,104,105,115,32,99,117,115,116,111,109,101,114,32,105,115,32,115,117,99,99,101,115,115,102,117,108,108,121,32,97,100,100,101,100,32,116,111,32,100,97,116,97,98,97,115,101);
+			list2 = (13,10);
+			sysout = (List<Integer> list1,List<Integer>list2);
+
+		}
+		else
+		{
+			list1 = (84,104,105,115,32,99,117,115,116,111,109,101,114,32,105,115,32,97,108,114,101,97,100,121,32,112,114,101,115,101,110,116,32,105,110,32,116,104,101,32,100,97,116,97,98,97,115,101);
+			list2 = (13,10);
+			sysout = (List<Integer> list1,List<Integer>list2);
+		};
+		
+		list1 = (45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45);
+		list2 = (13,10);
+		sysout = (List<Integer> list1,List<Integer>list2);
+			
+		return success;
+	}

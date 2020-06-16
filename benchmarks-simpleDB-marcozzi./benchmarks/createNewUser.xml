@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>RiskIt\createNewUser.esdb</input>
+    <solvingTime>05s</solvingTime>
+  </stats>
+  <paths number="24">
+    <feasible number="3">
+      <path def="while0-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK">
+        <inputs>
+          <integer name="in1">60</integer>
+          <integer name="in10">92</integer>
+          <integer name="in11">96</integer>
+          <integer name="in12">56</integer>
+          <integer name="in13">62</integer>
+          <integer name="in14">59</integer>
+          <integer name="in15">54</integer>
+          <integer name="in16">57</integer>
+          <integer name="in17">61</integer>
+          <integer name="in18">51</integer>
+          <integer name="in19">53</integer>
+          <integer name="in2">48</integer>
+          <integer name="in20">52</integer>
+          <integer name="in21">55</integer>
+          <integer name="in22">49</integer>
+          <integer name="in23">50</integer>
+          <integer name="in24">75</integer>
+          <integer name="in25">81</integer>
+          <integer name="in26">76</integer>
+          <integer name="in27">86</integer>
+          <integer name="in28">88</integer>
+          <integer name="in29">95</integer>
+          <integer name="in3">63</integer>
+          <integer name="in30">93</integer>
+          <integer name="in4">64</integer>
+          <integer name="in5">74</integer>
+          <integer name="in6">89</integer>
+          <integer name="in7">90</integer>
+          <integer name="in8">91</integer>
+          <integer name="in9">94</integer>
+          <table name="education" size="0" />
+          <table name="employmentstat" size="0" />
+          <table name="geo" size="0" />
+          <table name="industry" size="1">
+            <row>[89, ?, ?]</row>
+          </table>
+          <table name="investment" size="0" />
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="1">
+            <row>[90, ?, ?]</row>
+          </table>
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="0" />
+          <table name="wage" size="0" />
+          <table name="youth" size="0" />
+          <table name="ziptable" size="0" />
+        </inputs>
+        <outputs>
+          <table name="education" size="1">
+            <row>[60, 86, 88]</row>
+          </table>
+          <table name="employmentstat" size="1">
+            <row>[60, 81, 76]</row>
+          </table>
+          <table name="geo" size="0" />
+          <table name="industry" size="1">
+            <row>[89, ?, ?]</row>
+          </table>
+          <table name="investment" size="1">
+            <row>[60, 63, 64, 74]</row>
+          </table>
+          <table name="job" size="1">
+            <row>[60, 95, 89, 90, 93, 91, 94, 92, 96]</row>
+          </table>
+          <table name="migration" size="0" />
+          <table name="occupation" size="1">
+            <row>[90, ?, ?]</row>
+          </table>
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="1">
+            <row>[60, 56, 62, 48, 59, 54, 57, 61, 51, 53, 52, 55, 49, 50]</row>
+          </table>
+          <table name="wage" size="0" />
+          <table name="youth" size="1">
+            <row>[60, 75]</row>
+          </table>
+          <table name="ziptable" size="0" />
+          <sysouts>
+            <sysouts>Customer details you entered are .....</sysouts>
+            <sysouts>Name                       : 56</sysouts>
+            <sysouts>SSN                        : 60</sysouts>
+            <sysouts>Age                        : 48</sysouts>
+            <sysouts>Sex                        : 59</sysouts>
+            <sysouts>Marital Status             : 54</sysouts>
+            <sysouts>Race                       : 57</sysouts>
+            <sysouts>Tax Status                 : 61</sysouts>
+            <sysouts>Tax Details                : 51</sysouts>
+            <sysouts>House hold information     : 53</sysouts>
+            <sysouts>Father's origin            : 52</sysouts>
+            <sysouts>Mother's origin            : 55</sysouts>
+            <sysouts>Birth Country              : 49</sysouts>
+            <sysouts>CitizenShip                : 50</sysouts>
+            <sysouts>Capital Gains              : 63</sysouts>
+            <sysouts>Capital losses             : 64</sysouts>
+            <sysouts>Stock dividends            : 74</sysouts>
+            <sysouts>Parents'Informarion        : 75</sysouts>
+            <sysouts>Employment Status          : 76</sysouts>
+            <sysouts>Un-employment reason       : 81</sysouts>
+            <sysouts>Education                  : 86</sysouts>
+            <sysouts>Further education enrolled : 88</sysouts>
+            <sysouts>Work Class                 : 95</sysouts>
+            <sysouts>Union member               : 93</sysouts>
+            <sysouts>Industry code              : 89</sysouts>
+            <sysouts>Occupation code            : 90</sysouts>
+            <sysouts>Employer Size              : 91</sysouts>
+            <sysouts>Self-Employed              : 92</sysouts>
+            <sysouts>Week wage                  : 94</sysouts>
+            <sysouts>No. of weeks of work       : 96</sysouts>
+            <sysouts>---------------------------------------------</sysouts>
+            <sysouts>This customer is successfully added to database</sysouts>
+            <sysouts>---------------------------------------------</sysouts>
+          </sysouts>
+          <return>1</return>
+        </outputs>
+      </path>
+      <path def="while0-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException">
+        <inputs>
+          <integer name="in1">59</integer>
+          <integer name="in10">0</integer>
+          <integer name="in11">0</integer>
+          <integer name="in12">55</integer>
+          <integer name="in13">61</integer>
+          <integer name="in14">57</integer>
+          <integer name="in15">53</integer>
+          <integer name="in16">56</integer>
+          <integer name="in17">60</integer>
+          <integer name="in18">50</integer>
+          <integer name="in19">52</integer>
+          <integer name="in2">47</integer>
+          <integer name="in20">51</integer>
+          <integer name="in21">54</integer>
+          <integer name="in22">48</integer>
+          <integer name="in23">49</integer>
+          <integer name="in24">74</integer>
+          <integer name="in25">76</integer>
+          <integer name="in26">75</integer>
+          <integer name="in27">81</integer>
+          <integer name="in28">86</integer>
+          <integer name="in29">0</integer>
+          <integer name="in3">62</integer>
+          <integer name="in30">0</integer>
+          <integer name="in4">63</integer>
+          <integer name="in5">64</integer>
+          <integer name="in6">0</integer>
+          <integer name="in7">1738</integer>
+          <integer name="in8">0</integer>
+          <integer name="in9">0</integer>
+          <table name="education" size="0" />
+          <table name="employmentstat" size="0" />
+          <table name="geo" size="0" />
+          <table name="industry" size="0" />
+          <table name="investment" size="0" />
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="0" />
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="0" />
+          <table name="wage" size="0" />
+          <table name="youth" size="0" />
+          <table name="ziptable" size="0" />
+        </inputs>
+        <outputs>
+          <table name="education" size="1">
+            <row>[59, 81, 86]</row>
+          </table>
+          <table name="employmentstat" size="1">
+            <row>[59, 76, 75]</row>
+          </table>
+          <table name="geo" size="0" />
+          <table name="industry" size="0" />
+          <table name="investment" size="1">
+            <row>[59, 62, 63, 64]</row>
+          </table>
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="0" />
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="1">
+            <row>[59, 55, 61, 47, 57, 53, 56, 60, 50, 52, 51, 54, 48, 49]</row>
+          </table>
+          <table name="wage" size="0" />
+          <table name="youth" size="1">
+            <row>[59, 74]</row>
+          </table>
+          <table name="ziptable" size="0" />
+          <sysouts>
+            <sysouts>Customer details you entered are .....</sysouts>
+            <sysouts>Name                       : 55</sysouts>
+            <sysouts>SSN                        : 59</sysouts>
+            <sysouts>Age                        : 47</sysouts>
+            <sysouts>Sex                        : 57</sysouts>
+            <sysouts>Marital Status             : 53</sysouts>
+            <sysouts>Race                       : 56</sysouts>
+            <sysouts>Tax Status                 : 60</sysouts>
+            <sysouts>Tax Details                : 50</sysouts>
+            <sysouts>House hold information     : 52</sysouts>
+            <sysouts>Father's origin            : 51</sysouts>
+            <sysouts>Mother's origin            : 54</sysouts>
+            <sysouts>Birth Country              : 48</sysouts>
+            <sysouts>CitizenShip                : 49</sysouts>
+            <sysouts>Capital Gains              : 62</sysouts>
+            <sysouts>Capital losses             : 63</sysouts>
+            <sysouts>Stock dividends            : 64</sysouts>
+            <sysouts>Parents'Informarion        : 74</sysouts>
+            <sysouts>Employment Status          : 75</sysouts>
+            <sysouts>Un-employment reason       : 76</sysouts>
+            <sysouts>Education                  : 81</sysouts>
+            <sysouts>Further education enrolled : 86</sysouts>
+            <sysouts>Work Class                 : 0</sysouts>
+            <sysouts>Union member               : 0</sysouts>
+            <sysouts>Industry code              : 0</sysouts>
+            <sysouts>Occupation code            : 1738</sysouts>
+            <sysouts>Employer Size              : 0</sysouts>
+            <sysouts>Self-Employed              : 0</sysouts>
+            <sysouts>Week wage                  : 0</sysouts>
+            <sysouts>No. of weeks of work       : 0</sysouts>
+            <sysouts>---------------------------------------------</sysouts>
+            <sysouts>Catch in createUser</sysouts>
+          </sysouts>
+          <return>0</return>
+        </outputs>
+      </path>
+      <path def="while1-iffalse">
+        <inputs>
+          <integer name="in1">51</integer>
+          <integer name="in10">0</integer>
+          <integer name="in11">0</integer>
+          <integer name="in12">0</integer>
+          <integer name="in13">0</integer>
+          <integer name="in14">0</integer>
+          <integer name="in15">0</integer>
+          <integer name="in16">0</integer>
+          <integer name="in17">0</integer>
+          <integer name="in18">0</integer>
+          <integer name="in19">0</integer>
+          <integer name="in2">0</integer>
+          <integer name="in20">0</integer>
+          <integer name="in21">0</integer>
+          <integer name="in22">0</integer>
+          <integer name="in23">0</integer>
+          <integer name="in24">0</integer>
+          <integer name="in25">0</integer>
+          <integer name="in26">0</integer>
+          <integer name="in27">0</integer>
+          <integer name="in28">0</integer>
+          <integer name="in29">0</integer>
+          <integer name="in3">0</integer>
+          <integer name="in30">0</integer>
+          <integer name="in4">0</integer>
+          <integer name="in5">0</integer>
+          <integer name="in6">0</integer>
+          <integer name="in7">0</integer>
+          <integer name="in8">0</integer>
+          <integer name="in9">0</integer>
+          <table name="education" size="0" />
+          <table name="employmentstat" size="0" />
+          <table name="geo" size="0" />
+          <table name="industry" size="0" />
+          <table name="investment" size="0" />
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="0" />
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="1">
+            <row>[51, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?]</row>
+          </table>
+          <table name="wage" size="0" />
+          <table name="youth" size="0" />
+          <table name="ziptable" size="0" />
+        </inputs>
+        <outputs>
+          <table name="education" size="0" />
+          <table name="employmentstat" size="0" />
+          <table name="geo" size="0" />
+          <table name="industry" size="0" />
+          <table name="investment" size="0" />
+          <table name="job" size="0" />
+          <table name="migration" size="0" />
+          <table name="occupation" size="0" />
+          <table name="stateabbv" size="0" />
+          <table name="userrecord" size="1">
+            <row>[51, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?]</row>
+          </table>
+          <table name="wage" size="0" />
+          <table name="youth" size="0" />
+          <table name="ziptable" size="0" />
+          <sysouts>
+            <sysouts>Customer details you entered are .....</sysouts>
+            <sysouts>Name                       : 0</sysouts>
+            <sysouts>SSN                        : 51</sysouts>
+            <sysouts>Age                        : 0</sysouts>
+            <sysouts>Sex                        : 0</sysouts>
+            <sysouts>Marital Status             : 0</sysouts>
+            <sysouts>Race                       : 0</sysouts>
+            <sysouts>Tax Status                 : 0</sysouts>
+            <sysouts>Tax Details                : 0</sysouts>
+            <sysouts>House hold information     : 0</sysouts>
+            <sysouts>Father's origin            : 0</sysouts>
+            <sysouts>Mother's origin            : 0</sysouts>
+            <sysouts>Birth Country              : 0</sysouts>
+            <sysouts>CitizenShip                : 0</sysouts>
+            <sysouts>Capital Gains              : 0</sysouts>
+            <sysouts>Capital losses             : 0</sysouts>
+            <sysouts>Stock dividends            : 0</sysouts>
+            <sysouts>Parents'Informarion        : 0</sysouts>
+            <sysouts>Employment Status          : 0</sysouts>
+            <sysouts>Un-employment reason       : 0</sysouts>
+            <sysouts>Education                  : 0</sysouts>
+            <sysouts>Further education enrolled : 0</sysouts>
+            <sysouts>Work Class                 : 0</sysouts>
+            <sysouts>Union member               : 0</sysouts>
+            <sysouts>Industry code              : 0</sysouts>
+            <sysouts>Occupation code            : 0</sysouts>
+            <sysouts>Employer Size              : 0</sysouts>
+            <sysouts>Self-Employed              : 0</sysouts>
+            <sysouts>Week wage                  : 0</sysouts>
+            <sysouts>No. of weeks of work       : 0</sysouts>
+            <sysouts>---------------------------------------------</sysouts>
+            <sysouts>This customer is already present in the database</sysouts>
+            <sysouts>---------------------------------------------</sysouts>
+          </sysouts>
+          <return>0</return>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="21">
+      <path def="while0-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while0-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException" ></path>
+      <path def="while0-iftrue-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while0-iftrue-catchinsertOK-catchinsertException" />
+      <path def="while0-iftrue-catchinsertException" />
+      <path def="while0-iffalse" />
+      <path def="while1-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK" />
+      <path def="while1-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while1-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while1-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while1-iftrue-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while1-iftrue-catchinsertOK-catchinsertException" />
+      <path def="while1-iftrue-catchinsertException" />
+      <path def="while2-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK" />
+      <path def="while2-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while2-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while2-iftrue-catchinsertOK-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while2-iftrue-catchinsertOK-catchinsertOK-catchinsertException" />
+      <path def="while2-iftrue-catchinsertOK-catchinsertException" />
+      <path def="while2-iftrue-catchinsertException" />
+      <path def="while2-iffalse" />
+    </unfeasible>
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

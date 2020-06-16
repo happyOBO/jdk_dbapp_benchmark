@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <stats>
+    <input>vla.sdb</input>
+    <solvingTime>&lt;1s</solvingTime>
+  </stats>
+  <paths number="2">
+    <feasible number="2">
+      <path def="catch-updateOK">
+        <inputs>
+          <table name="aTable" size="0" />
+          <table name="bTable" size="0" />
+          <table name="cTable" size="0" />
+          <table name="uTable" size="0" />
+        </inputs>
+        <outputs>
+          <table name="aTable" size="0" />
+          <table name="bTable" size="0" />
+          <table name="cTable" size="0" />
+          <table name="uTable" size="0" />
+        </outputs>
+      </path>
+      <path def="catch-updateException">
+        <inputs>
+          <table name="aTable" size="1">
+            <row>[2, 3]</row>
+          </table>
+          <table name="bTable" size="0" />
+          <table name="cTable" size="0" />
+          <table name="uTable" size="1">
+            <row>[2, ?]</row>
+          </table>
+        </inputs>
+        <outputs>
+          <table name="aTable" size="1">
+            <row>[2, 3]</row>
+          </table>
+          <table name="bTable" size="0" />
+          <table name="cTable" size="0" />
+          <table name="uTable" size="1">
+            <row>[2, ?]</row>
+          </table>
+        </outputs>
+      </path>
+    </feasible>
+    <unfeasible number="0" />
+    <timeOut number="0" />
+    <unknown number="0" />
+    <error number="0" />
+  </paths>
+</tests>

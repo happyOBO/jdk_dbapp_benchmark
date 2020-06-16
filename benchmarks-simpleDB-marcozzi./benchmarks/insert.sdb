@@ -1,0 +1,38 @@
+CREATE TABLE t1 (
+idt1 INTEGER NOT NULL,
+fieldt1 INTEGER NOT NULL,
+CONSTRAINT t1PK PRIMARY KEY (idt1),
+CHECK(idt1 > 0)
+);
+
+CREATE TABLE t2 (
+idt2 INTEGER NOT NULL,
+fieldt2 INTEGER NOT NULL,
+CONSTRAINT t2PK PRIMARY KEY (idt2),
+CONSTRAINT t2FK FOREIGN KEY (fieldt2) REFERENCES t1(idt1),
+CHECK(idt2 > 0)
+);
+
+void test (Connection con,Scanner in) throws SQLException {
+	
+	con.createStatement().execute("DELETE FROM t2");	
+	
+	int value = 3;	
+	con.createStatement().execute("INSERT INTO t2 VALUES ("+((value-1))+",2)");
+	
+	try {
+		con.createStatement().execute("INSERT INTO t2 VALUES (2,5)");
+	} catch (SQLException e) {};
+	
+	try {
+		con.createStatement().execute("INSERT INTO t2 VALUES (0,5)");
+	} catch (SQLException e) {};
+	
+	con.createStatement().execute("DELETE FROM t2");
+	con.createStatement().execute("DELETE FROM t1");
+	try {
+		con.createStatement().execute("INSERT INTO t2 VALUES (2,5)");
+	} catch (SQLException e) {};
+	
+}
+

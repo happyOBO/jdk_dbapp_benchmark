@@ -1,0 +1,75 @@
+CREATE TABLE client (
+			name INTEGER NOT NULL,
+			age INTEGER NOT NULL,
+			purchases INTEGER NOT NULL,
+			expenses INTEGER NOT NULL,
+			CONSTRAINT clientPK PRIMARY KEY (name),
+			CHECK(name > 0),
+			CHECK(name < 5),
+			CHECK(age > 0)
+			);
+
+			CREATE TABLE prospect (
+			prospectName INTEGER NOT NULL,
+			prospectLevel INTEGER NOT NULL,
+			CONSTRAINT prospectPK PRIMARY KEY (prospectName),
+			CONSTRAINT prispectToClientFK FOREIGN KEY (prospectName) REFERENCES client (name),
+			CHECK(prospectLevel > 0)
+			);
+
+
+			CREATE TABLE product (
+			id INTEGER NOT NULL,
+			productName INTEGER NOT NULL,
+			price INTEGER NOT NULL,
+			boughtQuantity INTEGER NOT NULL,
+			CONSTRAINT productPK PRIMARY KEY (id),
+			CHECK(price > 0)
+			);
+
+			CREATE TABLE purchase (
+			purchaseId INTEGER NOT NULL,
+			cli INTEGER NOT NULL,
+			pro INTEGER NOT NULL,
+			CONSTRAINT purchasePK PRIMARY KEY (purchaseId),
+			CONSTRAINT purchaseToClientFK FOREIGN KEY (cli) REFERENCES client (name),
+			CONSTRAINT purchaseToProductFK FOREIGN KEY (pro) REFERENCES product (id)
+			);
+	
+	void test (Connection con,Scanner in) throws SQLException {
+		
+		con.commit();
+
+		con.createStatement().execute("INSERT INTO client VALUES (3,4,3,5)");
+
+		con.createStatement().execute("INSERT INTO purchase VALUES (1,2,1)");
+		con.createStatement().execute("INSERT INTO purchase VALUES (2,1,1)");
+		con.createStatement().execute("INSERT INTO purchase VALUES (3,1,2)");
+
+		con.createStatement().execute("UPDATE client SET expenses=0");
+		con.createStatement().execute("UPDATE client SET purchases=0");
+		con.createStatement().execute("UPDATE product SET boughtQuantity=0");
+		
+		ResultSet result = con.createStatement().executeQuery("SELECT purchaseId, cli, pro FROM purchase");
+
+		while (result.next()) {
+			con.createStatement().execute("UPDATE product SET boughtQuantity = (boughtQuantity + 1) WHERE (id = "+(result.getInt("pro"))+")");
+			ResultSet productPrice = con.createStatement().executeQuery("SELECT price FROM product WHERE (id = "+(result.getInt("pro"))+")");
+			productPrice.next();
+			con.createStatement().execute("UPDATE client SET expenses = (expenses + "+(productPrice.getInt("price"))+") WHERE (name = "+(result.getInt("cli"))+")");
+			con.createStatement().execute("UPDATE client SET purchases = (purchases + 1) WHERE (name = "+(result.getInt("cli"))+")");
+		};
+		
+		con.createStatement().execute("DELETE FROM product WHERE (boughtQuantity=0)");
+		con.createStatement().execute("UPDATE client SET name = (name+1) WHERE ((expenses = 0) AND (purchases = 0))");
+		result = con.createStatement().executeQuery("SELECT name FROM client WHERE ((purchases < 2) AND (expenses < 2))");
+		while (result.next()) {
+			con.createStatement().execute("INSERT INTO prospect VALUES ("+(result.getInt("name"))+",1)");
+		};
+
+		con.createStatement().execute("UPDATE purchase SET pro = 3 WHERE (pro = 2)");
+		con.createStatement().execute("DELETE FROM purchase WHERE (pro = 2)");
+
+		con.commit();
+		
+	}

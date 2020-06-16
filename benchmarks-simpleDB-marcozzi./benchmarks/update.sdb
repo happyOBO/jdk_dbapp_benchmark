@@ -1,0 +1,47 @@
+CREATE TABLE t1 (
+idt1 INTEGER NOT NULL,
+fieldt1 INTEGER NOT NULL,
+CONSTRAINT t1PK PRIMARY KEY (idt1)
+);
+
+CREATE TABLE t2 (
+idt2 INTEGER NOT NULL,
+fieldt2 INTEGER NOT NULL,
+CONSTRAINT t2PK PRIMARY KEY (idt2),
+CONSTRAINT t2FK FOREIGN KEY (fieldt2) REFERENCES t1(idt1),
+CHECK(idt2 < 100)
+);
+
+void test (Connection con,Scanner in) throws SQLException {
+	
+	con.createStatement().execute("DELETE FROM t1 WHERE (idt1 = 44)");
+	
+	con.createStatement().execute("INSERT INTO t2 VALUES (2,1)");
+	con.createStatement().execute("INSERT INTO t2 VALUES (3,2)");
+	con.createStatement().execute("INSERT INTO t2 VALUES (1,0)");
+	
+	int value = 1;	
+	con.createStatement().execute("UPDATE t2 SET idt2 = (idt2 - "+(value)+") WHERE (idt2 = (1 + fieldt2))");
+	
+	con.createStatement().execute("UPDATE t2 SET fieldt2 = 3 WHERE (idt2 = 0)");
+	
+	con.createStatement().execute("UPDATE t1 SET idt1 = 5 WHERE (idt1 = 4)");
+	
+	try {
+		con.createStatement().execute("UPDATE t2 SET idt2 = 12 WHERE (idt2 = fieldt2)");
+	} catch (SQLException e) {};
+	
+	try {
+		con.createStatement().execute("UPDATE t1 SET idt1 = 15 WHERE (idt1 = 3)");
+	} catch (SQLException e) {};
+	
+	try {
+		con.createStatement().execute("UPDATE t2 SET fieldt2 = 44 WHERE (idt2 = 2)");
+	} catch (SQLException e) {};
+	
+	try {
+		con.createStatement().execute("UPDATE t2 SET idt2 = 101 WHERE (idt2 = 1)");
+	} catch (SQLException e) {};
+	
+}
+

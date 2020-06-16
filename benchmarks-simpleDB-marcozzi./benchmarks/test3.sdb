@@ -1,0 +1,87 @@
+CREATE TABLE author (
+name INTEGER NOT NULL,
+totalAudience INTEGER NOT NULL,
+CONSTRAINT authorPK PRIMARY KEY (name),
+CHECK(totalAudience > 0)
+);
+
+CREATE TABLE play (
+title INTEGER NOT NULL,
+authorName INTEGER NOT NULL,
+audience INTEGER NOT NULL,
+CONSTRAINT playPK PRIMARY KEY (title),
+CONSTRAINT playToAuthorFK FOREIGN KEY (authorName) REFERENCES author(name),
+CHECK(audience > 0)
+);
+	
+	void test (Connection con,Scanner in,List<Integer> newAuthors,List<Integer> newPlaysTitle,List<Integer> newPlaysAudience,List<Integer> deadAuthors) throws SQLException {
+	
+		
+		con.commit();	
+
+			List<Integer> newPlaysAuthor = newAuthors;
+		
+			int error = 0;
+
+			if ((!(newAuthors==null))) {
+				int i = 0;
+				while (((error==0) & (i<newAuthors.size()))) {
+					try {
+						con.createStatement().execute("INSERT INTO author VALUES ("+(newPlaysAuthor.get(i))+",1)");
+					} catch (SQLException e) {
+						error = 1;
+					};
+					i = (i + 1);
+				};
+			} else {
+				error = 1;
+			};
+			
+			if (((!(deadAuthors==null)) & (error==0))) {	
+				int i = 0;
+				while (((error==0) & (i<deadAuthors.size()))) {
+					try {
+						con.createStatement().execute("DELETE FROM author WHERE (name="+(deadAuthors.get(i))+")");
+					} catch (SQLException e) {
+						error = 1;
+					};
+					i = (i + 1);
+				};
+			} else {
+				error = 1;
+			};
+
+		if ((error==0)) {
+			con.commit();
+		} else {
+			con.rollback();
+		};
+
+			error = 0;
+		
+			if (((!(((newPlaysTitle==null) | (newPlaysAuthor==null)) | (newPlaysAudience==null))) & ((newPlaysTitle.size()==newPlaysAuthor.size()) & (newPlaysAudience.size()==newPlaysTitle.size())))) {
+				int i = 0;
+				while (((error==0) & (i<newPlaysTitle.size()))) {
+					try {
+						con.createStatement().execute("INSERT INTO play VALUES ("+(newPlaysTitle.get(i))+","+(newPlaysAuthor.get(i))+","+(newPlaysAudience.get(i))+")");
+					} catch (SQLException e) {
+						error = 1;
+					};
+					try {
+						con.createStatement().execute("UPDATE author SET totalAudience = (totalAudience + "+(newPlaysAudience.get(i))+") WHERE (name = "+(newPlaysAuthor.get(i))+")");
+					} catch (SQLException e) {
+						error = 1;
+					};
+					i = (i + 1);
+				};
+			} else {
+				error = 1;
+			};
+
+		if ((error==0)) {
+			con.commit();
+		} else {
+			con.rollback();
+		};		
+	
+	}
