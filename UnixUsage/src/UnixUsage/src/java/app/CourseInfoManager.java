@@ -226,8 +226,8 @@ public class CourseInfoManager {
 
     /**
      * Query 15. Given the course name, the department name that offers this course, and a threshold of score,
-     * output the top five commands that the users who took the course and obtain a score >= threshold.
-     * @param The ID of a given course
+     * output the top five commands that the users who took the course and obtain a score. 
+     * @param courseId The ID of a given course
      * @param score The score to use as a threshold
      * @return List A list of the top 5 commands executed
      * @throws java.lang.Exception

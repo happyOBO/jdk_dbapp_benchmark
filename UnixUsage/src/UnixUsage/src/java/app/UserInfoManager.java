@@ -21,7 +21,7 @@ public class UserInfoManager {
      * Adds a new IUserInfo to the database
      * @param myUser IUserInfo Object passed in.
      * @return IUserInfo The added UserInfo Object
-     * @throws app.InvalidDataException, Exception
+     * @throws Exception
      */
     public static IUserInfo addUserInfo(IUserInfo myUser) throws InvalidDataException, Exception {
         validateUserInfo(myUser,false);
@@ -35,13 +35,13 @@ public class UserInfoManager {
      * @param sex The users's gender.
      * @param departmentId The Deparment ID that the user belongs to.
      * @param officeId The Office Id that the user belongs to.
-     * @parm graduate Indicates which graduate level the user belongs to.
+     * @param graduate Indicates which graduate level the user belongs to.
      * @param raceId The raceId which the user is belongs to.
      * @param password The user's password.
      * @param yearsUsingUnix The number of years the user has been using Unix.
      * @param enrollDate The user's enroll date.
      * @return IUserInfo The added UserInfo Object
-     * @throws app.InvalidDataException, Exception
+     * @throws Exception
      */
     public static IUserInfo addUserInfo(String firstname ,String lastname, String sex, int departmentId, int officeId, int graduate, int raceId, String password, int yearsUsingUnix, Date enrollDate) throws InvalidDataException, Exception {
         return addUserInfo(new UserInfo(firstname
@@ -60,7 +60,7 @@ public class UserInfoManager {
      * Edits an existing user's information
      * @param myUser IUserInfo Object passed in.
      * @return IUserInfo The edited UserInfo Object
-     * @throws app.InvalidDataException, Exception
+     * @throws Exception
      */
     public static IUserInfo editUserInfo(IUserInfo myUser) throws InvalidDataException, Exception {
         validateUserInfo(myUser,true);
@@ -75,13 +75,13 @@ public class UserInfoManager {
      * @param sex The users's gender.
      * @param departmentId The Deparment ID that the user belongs to.
      * @param officeId The Office Id that the user belongs to.
-     * @parm graduate Indicates which graduate level the user belongs to.
+     * @param graduate Indicates which graduate level the user belongs to.
      * @param raceId The raceId which the user is belongs to.
      * @param password The user's password.
      * @param yearsUsingUnix The number of years the user has been using Unix.
      * @param enrollDate The user's enroll date.
      * @return IUserInfo The edited UserInfo Object
-     * @throws app.InvalidDataException, Exception
+     * @throws Exception
      */
     public static IUserInfo editUserInfo(String userId, String firstname ,String lastname, String sex, int departmentId, int officeId, int graduate, int raceId, String password, int yearsUsingUnix, Date enrollDate) throws InvalidDataException, Exception {
         return editUserInfo(
@@ -116,7 +116,7 @@ public class UserInfoManager {
      * Checks to see if a user exists within the database
      * @param userId User's ID.
      * @return boolean True/False
-     * @throws app.InvalidDataException, Exception
+     * @throws Exception
      */
     public static boolean doesUserIdExist(String userId) throws InvalidDataException, Exception {
         if (userId == null || userId.trim().equals(""))
@@ -142,7 +142,7 @@ public class UserInfoManager {
      * @param startScore The start score.
      * @param endScore The end score.
      * @return HashMap A hashmap with the key as the score and the value as their workload.
-     * @throws app.InvalidDataException, Exception
+     * @throws Exception
      */
     public static HashMap<String,Integer> getWorkloadByScore(int startScore, int endScore) throws InvalidDataException, Exception {
         if (startScore < 0)
@@ -158,7 +158,7 @@ public class UserInfoManager {
      * Gets all the workload thats greater than or equal to the specified GPA
      * @param inGPA The gpa
      * @return int The workload
-     * @throws app.InvalidDataException, Exception
+     * @throws Exception
      */
     public static int getWorkloadGreaterThanEqualToGPA(float inGPA) throws Exception {
          if (inGPA < 0.0)
@@ -172,7 +172,7 @@ public class UserInfoManager {
      * Gets all the workload thats less specified GPA
      * @param inGPA The gpa
      * @return int The workload
-     * @throws app.InvalidDataException, Exception
+     * @throws Exception
      */
      public static int getWorkloadLessThanGPA(float inGPA) throws InvalidDataException, Exception {
          if (inGPA < 0.0)
@@ -192,7 +192,7 @@ public class UserInfoManager {
 
     /**
      * Query 9. Find the workload differences for graduate versus undergraduate students
-     * @parm graduate The graduate level.
+     * @param graduate The graduate level.
      * @return int Workload
      * @throws Exception
      */
