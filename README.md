@@ -9,6 +9,7 @@ Benchmarks
 - Movie_Rental : https://github.com/NemesLaszlo/Movie_Rental
 - UnixUsage : https://sourceforge.net/p/se549unixusage/wiki/Home/
 - AirIndia-database-software : https://github.com/JerryGoyal/AirIndia-database-software
+- ZooRegister : https://github.com/Faewin7/ZooRegister
 - https://github.com/soumyadip007/Java-JavaFx-Swing-Projects-Desktop-Application-GUI-Software
 - https://github.com/jorabin/KeePassJava2
 

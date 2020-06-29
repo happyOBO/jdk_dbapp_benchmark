@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"clientv4","l":"about"},{"p":"clientv4","l":"adminLogin"},{"p":"clientv4","l":"adminScreen"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"clientv4","l":"animal"},{"p":"clientv4","l":"cliConn"},{"p":"clientv4","l":"homeScreenForm"},{"p":"clientv4","l":"tutorial"}]
