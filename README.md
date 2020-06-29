@@ -10,6 +10,7 @@ Benchmarks
 - UnixUsage : https://sourceforge.net/p/se549unixusage/wiki/Home/
 - AirIndia-database-software : https://github.com/JerryGoyal/AirIndia-database-software
 - ZooRegister : https://github.com/Faewin7/ZooRegister
+- Simple-Java-Database-Quiz-Example : https://github.com/SharanyaJai/Simple-Java-Database-Quiz-Example
 - https://github.com/soumyadip007/Java-JavaFx-Swing-Projects-Desktop-Application-GUI-Software
 - https://github.com/jorabin/KeePassJava2
 
