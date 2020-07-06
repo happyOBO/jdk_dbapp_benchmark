@@ -11,6 +11,7 @@ Benchmarks
 - AirIndia-database-software : https://github.com/JerryGoyal/AirIndia-database-software
 - ZooRegister : https://github.com/Faewin7/ZooRegister
 - Simple-Java-Database-Quiz-Example : https://github.com/SharanyaJai/Simple-Java-Database-Quiz-Example
+- Food-delibery : https://github.com/vedipen/food-delivery-database-management.git
 - https://github.com/soumyadip007/Java-JavaFx-Swing-Projects-Desktop-Application-GUI-Software
 - https://github.com/jorabin/KeePassJava2
 
