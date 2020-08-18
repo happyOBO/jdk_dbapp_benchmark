@@ -12,14 +12,14 @@ pro*c
 
 - https://github.com/canzalon/embedded-sql-proc-system-html-interface
 
-mysql 
+MySQL
 - https://github.com/Matin-Moezi/database-course-project
 
 - https://github.com/Geurney/cs174project
 
 - https://github.com/HosniMansour/projet-c-gtk
 
-postgresql
+PostgreSQL
 - https://github.com/suhass90/Embedded-SQL-Programming-in-C
 
 
