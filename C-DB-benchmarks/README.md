@@ -26,3 +26,8 @@ PostgreSQL
 
 just simple code
 - https://github.com/ducongo/embeded_sql_C
+
+
+temp
+- https://github.com/tommybee/dynamic_proc
+- https://github.com/binkley/proc-clang
